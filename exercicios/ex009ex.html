@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where are you from?</title>
+</head>
+<body>
+    <input type="text" name="caixa1" id="caixa1">
+    <input type="button" value="responder" onclick="R()">
+    <div>
+        <p id="res"></p>
+    </div>
+
+
+    <script>
+        function R() {
+            var txt = window.document.getElementById('caixa1')
+            var espaco = window.document.getElementById('res')
+
+            if(txt === 'brasil'){
+                espaco.innerHTML += 'Você é brasileiro'
+            } else {
+                espaco.innerHTML += 'Você é gringo'
+            }
+
+            console.log()
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar de velocidade</title>
+</head>
+<body>
+    <input type="number" name="vel" id="vel">
+    <input type="button" value="velocidade" onclick="ver()">
+    <div> 
+        <p id="res"></p>
+    </div>
+
+    <script>
+
+
+        function ver() {
+        var caixa1 = window.document.getElementById('vel')
+        var resposta = window.document.getElementById('res')
+        var velocidade = Number(caixa1.value)    
+
+            if(velocidade > 60) {
+                resposta.innerHTML += 'Você esta Multado'
+            } else {
+                resposta.innerHTML += 'Parabéns você está dentro da velocidade permitida'
+            }
+
+        }
+        
+        
+
+    </script>
+</body>
+</html>
