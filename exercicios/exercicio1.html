@@ -3,36 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hora do dia</title>
 
     <style>
-        h1{
+        body {
+            background-color: rgb(157, 211, 230);
+            font: normal 15pt Arial;
+        }
+
+        header {
+            color: white;
             text-align: center;
+
+        }
+
+        section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.473);
         }
 
         div {
-            border: 1px solid black;
-            height: 400px;
-            width: 500px;
+            text-align: center;
+            padding: 10px;
         }
 
-        img {
-            border-radius: 50%;
-            width: 50%;
-            height: 50%;
+
+        footer {
+            color: white;
+            text-align: center;
+            font-style: italic;
         }
     </style>
 
 </head>
-<body>
-    <h1>Hora do dia</h1>
+<body onload="carregar()">
+    <header>
 
-    <div>
-        <p></p>
+        <h1>Hora do dia</h1>
 
-        <img src="../../project-login/source/img/pexels-matthew-montrone-1179229.jpg" alt="">
-    </div>
+    </header>
 
-    
+    <section>
+
+        <div id="msg">
+            aqui vai a mensagem
+        </div>
+
+        <div>
+            <img id="imagem" src="../img/manha1.png" alt="foto do dia">
+        </div>
+
+    </section>
+        
+    <footer>
+        <p>&copy; RyanVitor</p>
+    </footer>
+
+    <script>
+        function carregar() {
+            var msg = window.document.getElementById('msg')
+            var img = window.document.getElementById('imagem')
+            var data = new Date()
+            var hora = data.getHours()
+            msg.innerHTML = `Agora são ${hora} horas.`
+            if (hora >= 0 && hora < 12) {
+                //BOM DIA
+                img.src = '../img/manha1.png'
+                document.body.style.background = '#e2cd9f'
+            } else if (hora >= 12 && hora < 18) {
+                //BOA TARDE
+                img.src = '../img/tarde1.png'
+                document.body.style.background = '#b9846f'
+            } else {
+                //BOA NOITE
+                img.src = '../img/noite1.png'
+                document.body.style.background = '#515153'
+            }
+        }
+    </script>
 </body>
 </html>
