@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font: normal 15pt Arial;
+            background-color: rgb(48, 128, 233);
+        }
+        
+        header {
+            color: white;
+            text-align: center;
+        }
+
+        section {
+            background-color: white;
+            width: 500px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.555);
+            padding: 10px;
+            margin: auto;
+        }
+
+        #dados {
+            display: flex;
+            flex-direction: column;
+        }
+
+        div > p {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            color: white;
+            font-style: italic;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificador de Imagem</h1>
+    </header>
+    
+    <section>
+        <div id="dados">
+            <p>Inicio <input type="number" name="Inicio" id="txt1"></p>
+            <p>Fim <input type="number" name="Fim" id="txt2"></p>
+            <p>Passo <input type="number" name="Passo" id="txt3"></p>
+
+            <p><button type="button" onclick="contar()">Contar</button></p>
+        </div>
+        
+        <div id="res">
+            aaa
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy;RyanVitor</p>
+    </footer>
+
+    <script>
+        function contar()
+        {
+            var inicio = document.getElementById('txt1')
+            var fim = document.getElementById('txt2')
+            var passo = document.getElementById('txt3')
+            var resultado = document.getElementById('res')
+
+            if(inicio.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
+                window.alert("[Erro]")
+            } else {
+                resultado.innerHTML = 'contando:'
+                var i = Number(inicio.value)
+                var f = Number(fim.value)
+                var
+            }
+        }
+    </script>
+</body>
+</html>
