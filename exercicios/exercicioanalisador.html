@@ -51,10 +51,11 @@
             <input type="number" name="fnum" id="fnum">
             <input type="button" value="Adicionar" onclick="adicionar()">
             <br><select name="flista" id="flista" size="6"></select>
-            <br><input type="button" value="Finalizar">
+            <br><input type="button" value="Finalizar" onclick="finalizar()">
         </div>
         
-        <div id="">
+        <div id="res">
+
         </div>
     </section>
     
@@ -76,7 +77,7 @@
             }
         }
 
-        function isLista(n, l) {
+        function inLista(n, l) {
             if(l.indexOf(Number(n)) != -1) {
                 return true
             } else {
@@ -86,9 +87,26 @@
 
         function adicionar() {
             if(isNumero(num.value) && !inLista(num.value, valores)) {
-                
+                valores.push(Number(num.value))
+                let item = document.createElement('option')
+                item.text = `Valor ${num.value} adicionado.`
+                lista.appendChild(item)
+                res.innerHTML = ''
             } else {
                 window.alert('Valor inválido ou já encontrado na lista.')
+            }
+            num.value = ''
+            num.focus()
+        }
+
+        function finalizar() {
+            if (valores.length == 0) {
+                window.alert('Adicione valores antes de finalizar.')
+            } else {
+                let tot = valores.length
+
+                res.innerHTML = ''
+                res.innerHTML += `<p>Ao todo temos ${tot} números cadastrados.</p>`
             }
         }
     </script>
